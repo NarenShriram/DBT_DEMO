@@ -11,7 +11,7 @@ HOUR(TO_TIMESTAMP(STARTED_AT)) as HOUR_STARTED_AT,
 
 
 
-FROM {{ source('demo', 'bike') }}
+FROM {{ ref('stg_bike') }}
 where STARTED_AT != 'started_at'
 )
 
