@@ -13,9 +13,9 @@ WITH BIKE AS(
 	END_LNG,
 	MEMBER_CSUAL
 
-from {{ source('demo', 'bike') }}
+from {{ source('demo', 'bike') }} 
 
-Where RIDE_ID != 'bikeid'
+Where RIDE_ID != 'bikeid' and STARTED_AT != 'starttime' and STARTED_AT != '"starttime"'
 
 )
 

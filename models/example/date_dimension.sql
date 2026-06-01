@@ -12,7 +12,7 @@ HOUR(TO_TIMESTAMP(STARTED_AT)) as HOUR_STARTED_AT,
 
 
 FROM {{ ref('stg_bike') }}
-where STARTED_AT != 'started_at'
+where STARTED_AT != 'started_at' and STARTED_AT != 'starttime' and STARTED_AT != '"starttime"'
 )
 
 SELECT 
